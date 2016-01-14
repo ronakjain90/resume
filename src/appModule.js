@@ -4,10 +4,10 @@
 'use strict';
 
 define([
-
     'angular',
     'angular-couch-potato',
     'angular-ui-router',
+    'bower_components/angular-resource/angular-resource',
     'jquery.migrate',
     'browser-selector',
     'jquery.easing',
@@ -25,6 +25,7 @@ define([
     var appModule = ng.module('appModule', [
         'scs.couch-potato',
         'ui.router',
+        'ngResource',
         'layoutModule',
         'homePageModule'
     ]);
@@ -39,9 +40,28 @@ define([
                     root: {
                         templateUrl: 'interfaces/management/manageView.html'
                     }
-                }
+                },
+                controllerAs: 'MainController'
             })
     });
+
+    appModule.controller('MainController', ['$scope', '$http', '$resource', '$sce', function ($scope , $http, $resource, $sce) {
+        var resource = $resource('configuration.json');
+        $http.defaults.headers.common['Accept']= 'application/json';
+
+        resource.get({}).$promise.then(function(value) {
+                $scope.social = value.social;
+                $scope.contact = value.contact;
+                $scope.about = value.about;
+            });
+
+        $scope.renderHtml = function(html_code)
+        {
+            return $sce.trustAsHtml(html_code);
+        };
+
+        return $scope;
+    }]);
 
     appModule.run(function ($couchPotato, $rootScope, $state, $stateParams) {
         appModule.lazy = $couchPotato;
