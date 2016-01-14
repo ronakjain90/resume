@@ -1,9 +1,9 @@
 <section id="info" class="big-name">
     <div class="sticky-paper-head has-shadow ">
         <div class="content">
-            <h1>Elena Doe</h1>
+            <h1>{{about.f_name}} {{about.l_name}}</h1>
             <div class="short-tag">
-                frontend developer
+                {{about.role}}
             </div>
         </div>
     </div>
@@ -11,15 +11,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-xs-12 col-md-7">
-                    <div class="le-paragraph">
-                        <p>
-                            <strong>Lorem ipsum dolor sit amet,</strong>
-                            consectetur adipiscing elit. Nullam convallis lobortis commodo. Nulla et lobortis velit. Maecenas aliquam nulla eros, vitae rhoncus erat fermentum ac. Proin iaculis vel nulla et finibus. Suspendisse sed dolor libero. Nunc pellentesque in ipsum sit amet tempus.
-                        </p>
-                        <p>
-
-                            Nullam convallis lobortis commodo. Nulla et <strong>lobortis velit</strong>. Maecenas aliquam nulla eros, vitae rhoncus erat fermentum ac. Proin iaculis vel nulla et finibus. Suspendisse sed dolor libero. Nunc pellentesque in ipsum sit amet tempus.
-                        </p>
+                    <div class="le-paragraph" ng-bind-html="renderHtml(about.intro)">
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-5">
@@ -28,13 +20,13 @@
                             <li>
                                 <div class="info-item">
                                     <i class="fa fa-envelope"></i>
-                                    <span>info@example.com</span>
+                                    <span>{{contact.email}}</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="info-item">
                                     <i class="fa fa-twitter"></i>
-                                    <span>Twitter: <a href="#">@example</a></span>
+                                    <span>Twitter: <a href={{social.twitter}}>@{{social.twitter.split('twitter.com/')[1]}}</a></span>
                                 </div>
                             </li>
 
@@ -44,13 +36,13 @@
                             <li>
                                 <div class="info-item">
                                     <i class="fa fa-map-marker"></i>
-                                    <span>Live in: Istanbul,Turkey</span>
+                                    <span>Live in: {{contact.address.city}}, {{contact.address.country}},</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="info-item">
                                     <i class="fa fa-phone"></i>
-                                    <span>+90 (539) 1234567</span>
+                                    <span>{{contact.phone}}</span>
                                 </div>
                             </li>
                         </ul>

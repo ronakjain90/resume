@@ -16,9 +16,6 @@
 
                         <form id="contact-form" class="contact-form " method="post" >
 
-
-
-
                             <div class="col-xs-12 col-sm-6 no-margin">
                                 <div class="control-group">
 
@@ -92,36 +89,38 @@
                     <div class="contact-info">
 
                         <ul>
-                            <li>
-                                <label>address:</label> Ataturk Blvd, 6209 St, Suite 877<br>Istanbul,Turkey
+                            <li ng-hide="contact.address.length == 0">
+                                <label>address:</label> {{contact.address.street}}
+                                <br/>
+                                {{contact.address.city}}, {{contact.address.country}}
                             </li>
-                            <li>
-                                <label>email:</label> <a href="#">info@example.com</a>
+                            <li ng-hide="contact.email.length == 0">
+                                <label>email:</label> <a href="#">{{contact.email}}</a>
                             </li>
-                            <li>
-                                <label>phone:</label> <a href="#">+90 555 111 2233</a>
+                            <li ng-hide="contact.phone.length == 0">
+                                <label>phone:</label> <a href="#">{{contact.phone}}</a>
                             </li>
-                            <li>
-                                <label>fax</label> <a href="#">+90 123 456 7890</a>
+                            <li ng-hide="contact.fax.length == 0">
+                                <label>fax</label> <a href="#">{{contact.fax}}</a>
                             </li>
                         </ul>
 
                         <div class="social-icons">
                             <ul>
                                 <li>
-                                    <a class="fa fa-facebook" href="#"></a>
+                                    <a class="fa fa-facebook" href={{social.facebook}}></a>
                                 </li>
                                 <li>
-                                    <a class="fa fa-twitter" href="#"></a>
+                                    <a class="fa fa-twitter" href={{social.twitter}}></a>
                                 </li>
                                 <li>
-                                    <a class="fa fa-google-plus" href="#"></a>
+                                    <a class="fa fa-google-plus" href={{social.gplus}}></a>
                                 </li>
                                 <li>
-                                    <a class="fa fa-youtube" href="#"></a>
+                                    <a class="fa fa-youtube" href={{social.youtube}}></a>
                                 </li>
                                 <li>
-                                    <a class="fa fa-linkedin" href="#"></a>
+                                    <a class="fa fa-linkedin" href={{social.linkedin}}></a>
                                 </li>
                             </ul>
                         </div>

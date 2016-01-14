@@ -1,0 +1,27 @@
+{
+  "about": {
+    "f_name": "John",
+    "l_name": "Doe",
+    "role": "Full Stack Developer",
+    "_comment": "Use Strong where ever necessary in the intro section, HTML Safe",
+    "intro": "<p><strong>Lorem ipsum dolor sit amet,</strong>consectetur adipiscing elit. Nullam convallis lobortis commodo. Nulla et lobortis velit. Maecenas aliquam nulla eros, vitae rhoncus erat fermentum ac. Proin iaculis vel nulla et finibus. Suspendisse sed dolor libero. Nunc pellentesque in ipsum sit amet tempus.</p><p>Nullam convallis lobortis commodo. Nulla et <strong>lobortis velit</strong>. Maecenas aliquam nulla eros, vitae rhoncus erat fermentum ac. Proin iaculis vel nulla et finibus. Suspendisse sed dolor libero. Nunc pellentesque in ipsum sit amet tempus.</p>"
+  },
+  "social" : {
+    "github" : "https://github.com/",
+    "twitter" : "https://twitter.com/ronakjain90",
+    "linkedin" : "https://www.linkedin.com/",
+    "facebook" : "https://www.facebook.com/",
+    "gplus" : "https://plus.google.com/",
+    "youtube" : "http://www.youtube.com"
+  },
+  "contact" : {
+    "address" : {
+      "street" : "No 1, Block A",
+      "city" : "Chennai",
+      "country" : "India"
+    },
+    "email" : "ronakjain90@gmail.com",
+    "phone" : "+91-9941137495",
+    "fax" : ""
+  }
+}
